@@ -1,1 +1,87 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title>Quiz 1</title>
 
+	<!-- BS5 -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+
+    <!-- JS -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
+
+    <!-- CSS -->
+    <link rel="stylesheet" type="text/css" href="style.css">
+
+<body>
+
+<div class="container">
+    <h1 class="mb-4">JavaScript Operators</h1>
+    <div class="given-container">
+        <p class="lead">GIVEN: If A = 24.18 and B = 7.18, compute the following:</p>
+    </div>
+
+    <div class="row">
+        <!-- Arithmetic Operators -->
+        <div class="col-md-4">
+            <div class="card p-3">
+                <h3>Arithmetic Operators</h3>
+                <p id="exp-result">Exponent: </p>
+                <p id="mod-result">Modulus:  </p>
+                <button class="btn btn-primary btn-reveal" onclick="
+                	let A = 24.18;
+        			let B = 7.18;
+        			let C = A**B; //exponent
+        			let D = A%B; //modulus
+        			let exp_round = C.toFixed(2);
+        			let mod_round = D.toFixed(2);
+
+        			document.getElementById('exp-result').innerHTML = 'Exponent: '+ exp_round;
+        			document.getElementById('mod-result').innerHTML = 'Modulus: '+ mod_round;
+                ">Show Answer</button>
+            </div>
+        </div>
+
+        <!-- Comparison Operators -->
+        <div class="col-md-4">
+    		<div class="card p-3">
+        		<h3>Comparison Operators</h3>
+        		<p id="comp-greater">Is 24.18 greater than 7.18?</p>
+        		<p id="comp-equal"> Is 24.18 equal to 7.18?</p>
+        		<button class="btn btn-primary btn-reveal" onclick="
+            		let A = 24.18;
+            		let B = 7.18;
+            		let C = A > B;
+            		let D = A === B;
+            
+            		document.getElementById('comp-greater').innerHTML = 'Is 24.18 greater than 7.18? ' + C;
+            		document.getElementById('comp-equal').innerHTML = 'Is 24.18 equal to 7.18? ' + D;
+        		">Show Answer</button>
+    		</div>
+		</div>
+
+        <!-- Logical Operators -->
+        <div class="col-md-4">
+            <div class="card p-3">
+                <h3>Logical Operators</h3>
+                <p id="logic-and">(A <= B) && (A >= B)</p>
+                <p id="logic-or"> (A != B) || (A == B)</p>
+                <button class="btn btn-primary btn-reveal" onclick="
+                	let A = 24.18
+                	let B = 7.18
+                	let C = (A <= B) && (A >= B)
+                	let D = (A != B) || (A == B)
+
+                	document.getElementById('logic-and').innerHTML = '(A <= B) && (A >= B) ' + C;
+            		document.getElementById('logic-or').innerHTML = '(A != B) || (A == B) ' + D;
+                ">Show Answer</button>
+            </div>
+        </div>
+    </div>
+
+    <button class="btn btn-warning mt-4" onclick="location.reload()">Refresh</button>
+</div>
+
+</body>
+</html>
