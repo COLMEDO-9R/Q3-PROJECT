@@ -6,17 +6,21 @@ body {
     padding: 0;
     display: flex;
     flex-direction: column;
-    min-height: 100vh; /* Ensures the body takes the full height of the viewport */
+    min-height: 100vh; /* Ensures full viewport height */
 }
 
 /* Main Content */
 .container {
-    flex: 1; /* Pushes the footer to the bottom */
+    flex: 1; /* Pushes footer down */
 }
 
 /* Navbar Styling */
 .navbar {
+    position: sticky;
+    top: 0;
+    z-index: 1000;
     background-color: #b3e6ff;
+    box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
 }
 
 .navbar .nav-link {
@@ -27,6 +31,20 @@ body {
 
 .navbar .nav-link:hover {
     color: #007bff !important;
+}
+
+/* Page Transitions */
+.page {
+    opacity: 0;
+    transform: translateY(20px);
+    transition: all 0.5s ease-in-out;
+    display: none;
+}
+
+.page.active {
+    opacity: 1;
+    transform: translateY(0);
+    display: block;
 }
 
 /* Page Titles */
@@ -69,23 +87,29 @@ body {
     margin: 10px;
     padding: 10px 20px;
     font-size: 16px;
+    transition: all 0.3s ease-in-out;
 }
 
-/* Ticket Box Styling */
+.fare-selection .btn:hover {
+    transform: scale(1.05);
+}
+
+/* Ticket Box Styling - Makes it look like an actual ticket */
 .ticket-box {
-    background: #001f60;
+    background: linear-gradient(135deg, #001f60 40%, #0040ff);
     color: white;
     padding: 20px;
-    border-radius: 10px;
+    border-radius: 15px;
     text-align: center;
     font-size: 1.5rem;
     font-weight: bold;
-    margin-top: 20px;
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.2);
     width: 50%;
     margin: 20px auto;
+    border: dashed 3px white;
 }
 
-/* Table Styles */
+/* Train Schedule Table */
 .table {
     margin-top: 20px;
 }
@@ -114,4 +138,16 @@ footer {
     padding: 10px;
     margin-top: auto; /* Pushes the footer to the bottom */
     width: 100%;
+}
+
+/* Social Icons in Footer */
+footer .social-icons a {
+    color: white;
+    margin: 0 10px;
+    font-size: 1.5rem;
+    transition: 0.3s ease-in-out;
+}
+
+footer .social-icons a:hover {
+    color: #b3e6ff;
 }
