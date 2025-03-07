@@ -151,3 +151,26 @@ footer .social-icons a {
 footer .social-icons a:hover {
     color: #b3e6ff;
 }
+
+/* Search Bar Styling */
+.navbar form {
+    display: flex;
+    align-items: center;
+}
+
+.navbar .form-control {
+    width: 200px;
+    border-radius: 20px;
+    padding: 8px 15px;
+    border: 1px solid #ccc;
+    transition: 0.3s ease-in-out;
+}
+
+.navbar .form-control:focus {
+    border-color: #007bff;
+    box-shadow: 0 0 5px rgba(0, 123, 255, 0.5);
+}
+
+.navbar .btn {
+    border-radius: 20px;
+}
