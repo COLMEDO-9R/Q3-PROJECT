@@ -1,25 +1,24 @@
 document.addEventListener("DOMContentLoaded", function () {
-    // Function to show a specific page and hide others
+    // Function to show the selected page
     function showPage(pageId) {
         // Hide all pages
         document.querySelectorAll('.page').forEach(page => {
             page.style.display = 'none';
         });
+
         // Show the selected page
         document.getElementById(pageId).style.display = 'block';
     }
 
-    // Add event listeners to the navigation links
+    // Add click event listener to each navigation item
     document.querySelectorAll(".nav-link").forEach(navItem => {
         navItem.addEventListener("click", function (event) {
-            event.preventDefault();
-            // Get the page ID from the data-page attribute
-            const pageId = this.getAttribute("data-page");
-            // Show the corresponding page
-            showPage(pageId);
+            event.preventDefault(); // Prevent default anchor link behavior
+            const pageId = this.getAttribute("data-page"); // Get the data-page attribute value
+            showPage(pageId); // Show the corresponding page
         });
     });
 
-    // Show the "home" page by default
+    // Show the home page by default when the page loads
     showPage("home");
 });
