@@ -1,133 +1,175 @@
 /* General Styles */
 body {
-    font-family: Arial, sans-serif;
-    background-color: #f8f9fa;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background-color: #f4f7f6;
     margin: 0;
     padding: 0;
     display: flex;
     flex-direction: column;
-    min-height: 100vh; /* Ensures full viewport height */
+    min-height: 100vh; /* Ensures the body takes up the full height of the viewport */
 }
 
-/* Main Content */
-.container {
-    flex: 1; /* Pushes footer down */
+/* Wrapper to hold the content and footer */
+.main-content {
+    flex-grow: 1; /* Ensures the main content area grows to fill available space */
 }
 
 /* Navbar Styling */
 .navbar {
-    position: sticky;
-    top: 0;
-    z-index: 1000;
-    background-color: #b3e6ff;
-    box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+    background-color: #004c8c;
+    padding: 15px 0;
+}
+
+.navbar .navbar-brand {
+    font-weight: bold;
+    font-size: 28px;
+    color: white;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.navbar .navbar-brand img {
+    width: 40px;
+    height: 40px;
 }
 
 .navbar .nav-link {
     font-weight: bold;
-    cursor: pointer;
-    transition: color 0.3s ease-in-out;
+    color: white;
+    font-size: 18px;
+    padding: 10px 15px;
+    margin: 0 10px;
+    transition: background-color 0.3s ease, color 0.3s ease;
 }
 
 .navbar .nav-link:hover {
-    color: #007bff !important;
+    color: #004c8c;
+    background-color: #f4f7f6;
+    border-radius: 5px;
 }
 
-/* Page Transitions */
-.page {
-    opacity: 0;
-    transform: translateY(20px);
-    transition: all 0.5s ease-in-out;
-    display: none;
+.navbar form {
+    display: flex;
+    align-items: center;
+    margin-left: auto;
 }
 
-.page.active {
-    opacity: 1;
-    transform: translateY(0);
-    display: block;
+.navbar .form-control {
+    width: 220px;
+    border-radius: 30px;
+    padding: 8px 15px;
+    border: 1px solid #ddd;
+    box-shadow: 0px 3px 5px rgba(0, 0, 0, 0.1);
+}
+
+.navbar .btn-outline-primary {
+    border-radius: 30px;
+    padding: 8px 20px;
+    margin-left: 10px;
+    background-color: transparent;
+    color: white;
+    border: 1px solid white;
+    transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+.navbar .btn-outline-primary:hover {
+    background-color: white;
+    color: #004c8c;
 }
 
 /* Page Titles */
 .page-title {
     text-align: center;
-    font-size: 24px;
+    font-size: 32px;
     font-weight: bold;
-    background-color: black;
+    background-color: #004c8c;
     color: white;
-    padding: 10px;
-    margin: 20px 0;
-    border-radius: 5px;
+    padding: 20px;
+    margin: 30px 0;
+    border-radius: 10px;
 }
 
 /* Fare Selection Form */
 .fare-selection {
     background: #ffffff;
-    padding: 20px;
-    border-radius: 10px;
+    padding: 25px;
+    border-radius: 15px;
     text-align: center;
-    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
-    width: 50%;
-    margin: 20px auto;
+    box-shadow: 0px 10px 20px rgba(0, 0, 0, 0.1);
+    width: 60%;
+    margin: 0 auto;
 }
 
 .fare-selection h4 {
     font-weight: bold;
-    margin-bottom: 10px;
+    margin-bottom: 20px;
+    font-size: 20px;
 }
 
 .fare-selection .form-select {
     width: 80%;
-    margin: 0 auto 10px;
-    padding: 8px;
-    border-radius: 5px;
+    margin: 0 auto 15px;
+    padding: 12px 15px;
+    border-radius: 8px;
     border: 1px solid #ccc;
+    font-size: 16px;
+    background-color: #f8f9fa;
+    transition: border-color 0.3s ease;
+}
+
+.fare-selection .form-select:hover {
+    border-color: #004c8c;
 }
 
 .fare-selection .btn {
-    margin: 10px;
-    padding: 10px 20px;
-    font-size: 16px;
-    transition: all 0.3s ease-in-out;
+    margin: 15px 10px;
+    padding: 12px 30px;
+    font-size: 18px;
+    border-radius: 25px;
+    transition: all 0.3s ease;
+}
+
+.fare-selection .btn-dark {
+    background-color: #004c8c;
+    color: white;
+}
+
+.fare-selection .btn-outline-primary {
+    background-color: #f4f7f6;
+    color: #004c8c;
+    border: 2px solid #004c8c;
 }
 
 .fare-selection .btn:hover {
-    transform: scale(1.05);
+    background-color: #004c8c;
+    color: white;
 }
 
-/* Ticket Box Styling - Makes it look like an actual ticket */
-.ticket-box {
-    background: linear-gradient(135deg, #001f60 40%, #0040ff);
+.fare-selection .btn-outline-primary:hover {
+    background-color: #004c8c;
     color: white;
-    padding: 20px;
+    border-color: #004c8c;
+}
+
+/* Ticket Box Styling */
+.ticket-box {
+    background: #00274d;
+    color: white;
+    padding: 30px;
     border-radius: 15px;
     text-align: center;
     font-size: 1.5rem;
     font-weight: bold;
-    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.2);
-    width: 50%;
+    margin-top: 30px;
+    width: 60%;
     margin: 20px auto;
-    border: dashed 3px white;
+    box-shadow: 0px 5px 15px rgba(0, 0, 0, 0.1);
 }
 
-/* Train Schedule Table */
-.table {
-    margin-top: 20px;
-}
-
-.table th,
-.table td {
-    text-align: center;
-    vertical-align: middle;
-}
-
-/* Contact Page */
-form {
-    max-width: 600px;
-    margin: 20px auto;
-    padding: 20px;
-    background: #ffffff;
-    border-radius: 10px;
-    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
+.ticket-box h4 {
+    font-size: 22px;
+    margin-bottom: 20px;
 }
 
 /* Footer */
@@ -135,42 +177,51 @@ footer {
     background-color: #343a40;
     color: white;
     text-align: center;
-    padding: 10px;
-    margin-top: auto; /* Pushes the footer to the bottom */
+    padding: 15px;
+    margin-top: 40px;
+    border-top: 3px solid #f8f9fa;
     width: 100%;
+    position: relative;
+    bottom: 0;
 }
 
-/* Social Icons in Footer */
-footer .social-icons a {
-    color: white;
-    margin: 0 10px;
-    font-size: 1.5rem;
-    transition: 0.3s ease-in-out;
+/* Add this for footer to stick to the bottom */
+footer {
+    margin-top: auto; /* Push the footer to the bottom */
 }
 
-footer .social-icons a:hover {
-    color: #b3e6ff;
+footer a {
+    color: #f4f7f6;
+    text-decoration: none;
 }
 
-/* Search Bar Styling */
-.navbar form {
-    display: flex;
-    align-items: center;
+footer a:hover {
+    text-decoration: underline;
 }
 
-.navbar .form-control {
-    width: 200px;
-    border-radius: 20px;
-    padding: 8px 15px;
-    border: 1px solid #ccc;
-    transition: 0.3s ease-in-out;
-}
+/* Responsive Design */
+@media (max-width: 768px) {
+    .fare-selection {
+        width: 90%;
+    }
 
-.navbar .form-control:focus {
-    border-color: #007bff;
-    box-shadow: 0 0 5px rgba(0, 123, 255, 0.5);
-}
+    .ticket-box {
+        width: 90%;
+    }
 
-.navbar .btn {
-    border-radius: 20px;
+    .navbar .form-control {
+        width: 180px;
+    }
+
+    .navbar .btn-outline-primary {
+        padding: 8px 15px;
+    }
+
+    .navbar .nav-link {
+        font-size: 16px;
+    }
+
+    .page-title {
+        font-size: 28px;
+    }
 }
